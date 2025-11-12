@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS360 – Computer Graphics Portfolio | Anushka Singh</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #0d1117;
+      color: #f0f6fc;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    /* Smooth snap between assignments */
+    html {
+      scroll-snap-type: y mandatory;
+    }
+
+    header {
+      background: linear-gradient(90deg, #0a84ff, #1abc9c);
+      text-align: center;
+      color: white;
+      padding: 2rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+    }
+
+    header p {
+      margin-top: 0.3rem;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: #161b22;
+      border: none;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-snap-align: start;
+    }
+    #assn2 iframe {
+  height: 82vh;   /* was 90vh; this gives room for the heading+para above */
+}
+    #assn5 iframe { 
+      height: 86vh;         /* adjust if you ever change text size above */
+    }
+    #assn5 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    }
+    #assn5 h2 { margin-bottom: 0.25rem; }
+    #assn5 p  { margin-bottom: 0.6rem; }
+
+    section h2 {
+      color: #1abc9c;
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    section p {
+      max-width: 700px;
+      margin: 0 auto 0.8rem auto;
+      line-height: 1.5;
+      color: #ccc;
+      font-size: 1rem;
+    }
+
+    iframe {
+      width: 90vw;
+      height: 90vh; /* slightly smaller than full screen to remove scroll */
+      border: none;
+      border-radius: 12px;
+      background: black;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+    }
+
+    footer {
+      background: #0d1117;
+      color: #999;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      iframe { width: 95vw; height: 75vh; }
+      header h1 { font-size: 1.8rem; }
+    }
+    
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>CS360 – Computer Graphics Portfolio</h1>
+    <p>by Anushka Singh | Instructor: Prof. Soumya Dutta, IIT Kanpur</p>
+  </header>
+
+  <!-- Assignment 1 -->
+  <section id="assn1">
+    <h2>Assignment 1: 2D Scene Rendering and Animation</h2>
+    <p>Recreation of a 2D animated scene using basic primitives (square, triangle, circle) and affine transformations.</p>
+    <iframe src="Assignment1- 2D Scene Rendering/assignment1.html" title="Assignment 1"></iframe>
+  </section>
+
+  <!-- Assignment 2 -->
+  <section id="assn2">
+    <h2>Assignment 2: Shading Models (Flat, Gouraud, Phong)</h2>
+    <p>Three simultaneous viewports demonstrating per-face, per-vertex, and per-fragment shading with interactive light and zoom controls.</p>
+    <iframe src="Assignment2- Shading/index.html" title="Assignment 2"></iframe>
+  </section>
+
+  <!-- Assignment 3 -->
+  <section id="assn3">
+    <h2>Assignment 3: Reflection and Texture Mapping</h2>
+    <p>3D scene showcasing texture mapping, cubemap reflections, refractions, and a dynamic skybox environment.</p>
+    <iframe src="Assignment3- Reflection Mapping/index.html" title="Assignment 3"></iframe>
+  </section>
+
+  <!-- Assignment 4 -->
+  <section id="assn4">
+    <h2>Assignment 4: Shadow Mapping with Rasterization</h2>
+    <p>Two-pass shadow mapping implementation with real-time light position control and camera orbit animation.</p>
+    <iframe src="Assignment4- Shadow with Rasterization/assn4.html" title="Assignment 4"></iframe>
+  </section>
+
+  <!-- Assignment 5 -->
+  <section id="assn5">
+    <h2>Assignment 5: Ray Tracing</h2>
+    <p>Fragment-shader-based ray tracer rendering spheres with Phong lighting, shadows, and reflections.</p>
+    <iframe src="Assignment5- Ray Tracing/main.html" title="Assignment 5"></iframe>
+  </section>
+
+  <footer>
+    © 2025 Anushka Singh | IIT Kanpur | CS360: Computer Graphics
+  </footer>
+</body>
+</html>

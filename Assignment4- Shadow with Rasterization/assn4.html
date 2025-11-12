@@ -1,116 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Shadow Mapping - CS360 Assignment 4</title>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
-  <script type="text/javascript" src="assn4.js"></script>
+  <meta charset="UTF-8" />
+  <title>Assignment 4 – Shadow Mapping</title>
+  <script src="glMatrix-0.9.5.min.js"></script>
+  <script src="assn4.js"></script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #f0f0f0;
+    html,body{
+      margin:0;padding:0;width:100%;height:100%;
+      background:#000;color:#fff;
+      font-family:"Segoe UI",sans-serif;
+      display:flex;flex-direction:column;
+      align-items:center;justify-content:center;
     }
-    
-    #container {
-      max-width: 600px;
-      margin: 0 auto;
+    canvas{
+      aspect-ratio:1/1;width:85vmin;height:auto;border:none;display:block;
     }
-    
-    canvas {
-      border: 2px solid #333;
-      display: block;
-      margin: 20px auto;
-      background-color: white;
-    }
-    
-    .controls {
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .control-group {
-      margin-bottom: 15px;
-    }
-    
-    label {
-      display: inline-block;
-      width: 180px;
-      font-weight: bold;
-    }
-    
-    input[type="range"] {
-      width: 300px;
-      vertical-align: middle;
-    }
-    
-    input[type="checkbox"] {
-      margin-left: 10px;
-      transform: scale(1.2);
-    }
-    
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-    
-    .instructions {
-      background-color: #e8f4f8;
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 20px;
-      border-left: 4px solid #2196F3;
-    }
-    
-    .instructions h3 {
-      margin-top: 0;
-      color: #1976D2;
-    }
-    
-    .instructions ul {
-      margin: 10px 0;
-      padding-left: 20px;
-    }
+    .controls{text-align:center;margin-top:1rem;}
+    label{font-size:.9rem;display:block;margin:10px 0 4px;}
+    input[type=range]{width:220px;accent-color:#0a84ff;}
+    input[type=checkbox]{transform:scale(1.2);margin-left:6px;}
   </style>
 </head>
-
 <body onload="webGLStart();">
-  <div id="container">
-    <h1>Assignment 4</h1>
-    
-    <canvas id="3DTextureMapExample" width="500" height="500"></canvas>
-    
-    <div class="controls">
-      <div class="control-group">
-        <label for="lightSlider">Control Light Position:</label>
-        <input type="range" id="lightSlider" min="-20" max="20" step="0.5" value="5" />
-      </div>
-      
-      <div class="control-group">
-        <label for="animate">Animate Camera:</label>
-        <input type="checkbox" id="animate" />
-      </div>
-    </div>
-    
+  <canvas id="3DTextureMapExample" width="500" height="500"></canvas>
+  <div class="controls">
+    <label>Light Position X</label>
+    <input type="range" id="lightSlider" min="-20" max="20" step="0.5" value="5">
+    <label>Animate Camera <input type="checkbox" id="animate"></label>
   </div>
-
   <script>
-    const lightSlider = document.getElementById('lightSlider');
-    const animateCheckbox = document.getElementById('animate');
-
-    lightSlider.addEventListener('input', () => {
-      if (typeof setLightPosition === 'function') {
-        setLightPosition(parseFloat(lightSlider.value));
-      }
-    });
-
-    animateCheckbox.addEventListener('change', () => {
-      if (typeof toggleAnimation === 'function') {
-        toggleAnimation(animateCheckbox.checked);
-      }
-    });
+    const l=document.getElementById('lightSlider'),
+          a=document.getElementById('animate');
+    l.addEventListener('input',()=>{if(typeof setLightPosition==='function')
+      setLightPosition(parseFloat(l.value));});
+    a.addEventListener('change',()=>{if(typeof toggleAnimation==='function')
+      toggleAnimation(a.checked);});
   </script>
 </body>
 </html>
